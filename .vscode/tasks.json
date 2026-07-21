@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Current File",
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+
+            "linux": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "mkdir -p \"${workspaceFolder}/build\" && g++ \"${file}\" -std=c++20 -Wall -Wextra -g -o \"${workspaceFolder}/build/${fileBasenameNoExtension}\""
+                ]
+            },
+
+            "windows": {
+                "command": "powershell",
+                "args": [
+                    "-Command",
+                    "New-Item -ItemType Directory -Force '${workspaceFolder}\\build' | Out-Null; g++ '${file}' -std=c++20 -Wall -Wextra -g -o '${workspaceFolder}\\build\\${fileBasenameNoExtension}.exe'"
+                ]
+            }
+        }
+    ]
+}

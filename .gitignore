@@ -1,0 +1,46 @@
+# =========================
+# Build
+# =========================
+build/
+
+# C/C++ 编译产物
+*.o
+*.obj
+*.out
+*.exe
+*.dll
+*.so
+*.a
+
+# =========================
+# CMake
+# =========================
+CMakeFiles/
+CMakeCache.txt
+cmake-build-*/
+compile_commands.json
+
+# =========================
+# VS Code
+# =========================
+
+# 保留公共配置
+!.vscode/
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# 忽略个人配置
+.vscode/settings.json
+.vscode/c_cpp_properties.json
+
+# =========================
+# 系统文件
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# 日志
+# =========================
+*.log

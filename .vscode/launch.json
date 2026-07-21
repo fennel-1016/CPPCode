@@ -1,0 +1,41 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Current File",
+
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
+            "args": [],
+
+            "stopAtEntry": false,
+
+            "cwd": "${fileDirname}",
+
+            "externalConsole": true,
+
+            "preLaunchTask": "Build Current File",
+
+            "linux": {
+                "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
+                "MIMode": "gdb",
+                "miDebuggerPath": "/usr/bin/gdb"
+            },
+
+            "windows": {
+                "program": "${workspaceFolder}\\build\\${fileBasenameNoExtension}.exe",
+                "MIMode": "gdb",
+                "miDebuggerPath": "gdb.exe"
+            },
+
+            "setupCommands": [
+                {
+                    "description": "Enable pretty printing",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
