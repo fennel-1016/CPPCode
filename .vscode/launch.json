@@ -3,9 +3,9 @@
     "configurations": [
         {
             "name": "Debug Current File",
-
             "type": "cppdbg",
             "request": "launch",
+
             "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
             "args": [],
 
@@ -13,7 +13,7 @@
 
             "cwd": "${fileDirname}",
 
-            "externalConsole": true,
+            "externalConsole": false,
 
             "preLaunchTask": "Build Current File",
 
@@ -21,6 +21,11 @@
                 "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
                 "MIMode": "gdb",
                 "miDebuggerPath": "/usr/bin/gdb"
+            },
+
+            "osx": {
+                "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
+                "MIMode": "lldb"
             },
 
             "windows": {

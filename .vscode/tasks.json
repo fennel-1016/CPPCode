@@ -4,10 +4,12 @@
         {
             "label": "Build Current File",
             "type": "shell",
+
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
+
             "problemMatcher": [
                 "$gcc"
             ],
@@ -17,6 +19,14 @@
                 "args": [
                     "-c",
                     "mkdir -p \"${workspaceFolder}/build\" && g++ \"${file}\" -std=c++20 -Wall -Wextra -g -o \"${workspaceFolder}/build/${fileBasenameNoExtension}\""
+                ]
+            },
+
+            "osx": {
+                "command": "zsh",
+                "args": [
+                    "-c",
+                    "mkdir -p \"${workspaceFolder}/build\" && /usr/bin/clang++ \"${file}\" -std=c++20 -Wall -Wextra -g -o \"${workspaceFolder}/build/${fileBasenameNoExtension}\""
                 ]
             },
 
